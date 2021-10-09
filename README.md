@@ -3,7 +3,7 @@
 
 ### Apresentação
 
-** Olá!**
+### Olá!
 
 Este projeto é um desafio da vaga de Desenvolvedor Full-Stack do @laboratório-bridge. Sendo um *WebApp* que faz recebe um número do usuário e retorna se o número é um *Duodigito* ou não. O projeto além de verificar, ele também mantém um histórico das consultas realizadas.
 
