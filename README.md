@@ -15,10 +15,10 @@ Já o Backend foi desenvolvido em Python, com a utilização do framework [Djang
 
 ### Execução Local do Projeto
 
+Certifique-se que você tem o pip no seu terminal, caso esteja utilizando windows [instale](https://dicasdepython.com.br/resolvido-pip-nao-e-reconhecido-como-um-comando-interno/) o pip.
+
 No seu terminal, execute os comandos na seguinte ordem:
 > git clone https://github.com/BrunoBross/Desafio-Dev-Web-Full-Stack.git
-
-> apt-get -y install python-pip
 
 > pip install django
 
