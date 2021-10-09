@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from . models import Number
 from django.core.paginator import Paginator
 from django.contrib import messages
-from . models import FormContato
+from . models import FormVerificador
 
 
 def Duodigito(number):
@@ -23,15 +23,20 @@ def Duodigito(number):
 
 def index(request):
     if request.method != 'POST':
-        form = FormContato()
+        form = FormVerificador()
         return render(request, 'number/index.html', {'form': form})
 
-    form = FormContato(request.POST, request.FILES)
-
+    form = FormVerificador(request.POST, request.FILES)
     number = request.POST.get('numbers')
+    if int(number) <= 100:
+        messages.add_message(request, messages.ERROR, 'Digite um número maior que 100!')
+        return render(request, 'number/index.html', {'form': form})
+    if Duodigito(number):
+        messages.add_message(request, messages.SUCCESS, 'É duodigito!')
+    else:
+        messages.add_message(request, messages.ERROR, 'Não é duodigito!')
 
     form.save()
-
     return redirect('index')
 
 

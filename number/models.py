@@ -4,7 +4,7 @@ from django import forms
 
 
 class Number(models.Model):
-    numbers = models.CharField(max_length=10)
+    numbers = models.CharField(max_length=8)
     date_time = models.DateTimeField(default=timezone.now)
     duodigit = models.BooleanField(default=False)
 
@@ -12,7 +12,7 @@ class Number(models.Model):
         return self.numbers
 
 
-class FormContato(forms.ModelForm):
+class FormVerificador(forms.ModelForm):
     class Meta:
         model = Number
-        exclude = ('date_time', 'duodigit',)
+        exclude = ('date_time', 'duodigit')
