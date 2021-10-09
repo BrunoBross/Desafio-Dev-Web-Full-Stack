@@ -16,9 +16,11 @@ Já o Backend foi desenvolvido em Python, com a utilização do framework [Djang
 ### Execução Local do Projeto
 
 No seu terminal, execute os comandos na seguinte ordem:
-> git clone https://github.com/BrunoBross/Desafio-Dev-Web-Full-Stack.git <
-> pip install django <
-> python manage.py runserver <
+> git clone https://github.com/BrunoBross/Desafio-Dev-Web-Full-Stack.git
+
+> pip install django
+
+> python manage.py runserver
 
 ### Demo Online
 
