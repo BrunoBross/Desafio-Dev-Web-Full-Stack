@@ -31,6 +31,7 @@ def index(request):
     number = request.POST.get('numbers')
 
     form.save()
+
     return redirect('index')
 
 
