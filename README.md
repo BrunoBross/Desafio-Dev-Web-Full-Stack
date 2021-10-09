@@ -18,6 +18,8 @@ Já o Backend foi desenvolvido em Python, com a utilização do framework [Djang
 No seu terminal, execute os comandos na seguinte ordem:
 > git clone https://github.com/BrunoBross/Desafio-Dev-Web-Full-Stack.git
 
+> apt-get -y install python-pip
+
 > pip install django
 
 > python manage.py runserver
