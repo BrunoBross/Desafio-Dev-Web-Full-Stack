@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container pt-5 mt-5 mb-3 d-flex justify-content-center">
+    <div class="card px-1 py-4">
+        <div class="card-body">
+
+            <h4 class="card-title mb-3 text-dark">Verifica Duodigitos</h4>
+            <h6 class="information mt-4 text-dark">Digite um número</h6>
+
+            <!-- Formulario para insercao de numeros -->
+            <form method="POST" action="{% url 'index' %}">
+                {% csrf_token %}
+                <div class="row justify-content-center">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                          <input class="form-control" type="text" name="numbers" value="{{request.POST.number}}" placeholder="Ex: 1034" required id="id_numbers">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-sm-8">
+                      <button type="submit" class="btn btn-primary btn-block confirm-button">Verificar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+      <div class="d-flex flex-column text-center px-5 mt-3 mb-3 text-dark"> <small class="agree-text">Desafio Bridge Dev Web Full-Stack</small></div>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-center">
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }}" role="alert">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

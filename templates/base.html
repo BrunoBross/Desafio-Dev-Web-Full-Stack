@@ -1,0 +1,15 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Projeto</title>
+    {% include 'parciais/_head.html' %}
+</head>
+
+<body class="text-center bg-primary bg-gradient">
+
+  {% include 'parciais/_nav.html' %}
+  {% block conteudo %}{% endblock %}
+</body>
+</html>
