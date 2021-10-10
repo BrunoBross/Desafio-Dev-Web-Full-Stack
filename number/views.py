@@ -41,6 +41,7 @@ def index(request):
 
     # verificacoes do input do usuario
     if number.isnumeric():
+        # verificar se eh menor que 100 ou se o primeiro digito e 0 para corrigir o problema de input do html
         if int(number) <= 100 or int(number[0]) == 0:
             messages.add_message(request, messages.ERROR, 'Digite um número maior que 100!')
             return render(request, 'number/index.html', {'form': form})

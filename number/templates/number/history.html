@@ -7,8 +7,8 @@
         <div class="card-body">
 
             <!-- Historico -->
-            <h4 class="card-title mb-3 text-dark">Histórico</h4>
-            <p>Página {{numbers.number}}</p>
+            <h4 class="card-title mb-3 text-dark"><strong>Histórico</strong></h4>
+            <p><i>Página {{numbers.number}}</i></p>
             <table class="table caption-top table-striped">
               <thead>
                 <tr>
@@ -40,9 +40,9 @@
       <ul class="pagination">
           {% for page in numbers.paginator.page_range %}
                 {% if numbers.number == page %}
-                    <li class="page-item active shadow-lg"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
+                    <li class="page-item active shadow-lg"><a class="page-link text-dark shadow-lg" href="?p={{page}}">{{page}}</a></li>
                 {% else %}
-                    <li class="page-item shadow-lg"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
+                    <li class="page-item shadow-lg"><a class="page-link text-dark shadow-lg" href="?p={{page}}">{{page}}</a></li>
                 {% endif %}
           {% endfor %}
       </ul>
