@@ -1,4 +1,5 @@
 
+# script para testar a funcao verificadora de duodigito
 def SmallDuodigit(digit):
     for num in range(2, 101):
         multiple = int(digit) * num

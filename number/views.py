@@ -39,23 +39,30 @@ def index(request):
     form = FormVerificador(request.POST, request.FILES)
     number = request.POST.get('numbers')
 
-    if int(number) <= 100:
-        messages.add_message(request, messages.ERROR, 'Digite um número maior que 100!')
+    # verificacoes do input do usuario
+    if number.isnumeric():
+        if int(number) <= 100 or int(number[0]) == 0:
+            messages.add_message(request, messages.ERROR, 'Digite um número maior que 100!')
+            return render(request, 'number/index.html', {'form': form})
+
+        # forma a mensagem do menor duodigito
+        multiple = f'O menor duodigito múltiplo de {number} é {SmallDuodigit(number)}'
+        messages.add_message(request, messages.SUCCESS, multiple)
+
+        alteracoes = Number(numbers=request.POST['numbers'], smallduodigit=SmallDuodigit(number))
+
+        if form.is_valid():
+            alteracoes.save()
+            return redirect('index')
+    else:
+        messages.add_message(request, messages.ERROR, 'Digite um número inteiro!')
         return render(request, 'number/index.html', {'form': form})
-
-    # forma a mensagem do menor duodigito
-    multiple = f'O menor duodigito múltiplo de {number} é {SmallDuodigit(number)}'
-    messages.add_message(request, messages.SUCCESS, multiple)
-
-    if form.is_valid():
-        form.save()
-        return redirect('index')
 
 
 def history(request):
     # faz a ordenacao por data e a divisao de paginas
     numbers = Number.objects.order_by('-date_time')
-    paginator = Paginator(numbers, 4)
+    paginator = Paginator(numbers, 6)
     page = request.GET.get('p')
     numbers = paginator.get_page(page)
     return render(request, 'number/history.html', {

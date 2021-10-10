@@ -1,0 +1,9 @@
+@media screen and (max-width: 865px){
+    .mob-hide {
+        display: none;
+    }
+}
+
+.active a{
+    color: white !important;
+}

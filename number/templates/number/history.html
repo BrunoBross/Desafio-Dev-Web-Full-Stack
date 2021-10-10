@@ -2,42 +2,44 @@
 
 {% block conteudo %}
 
-<div class="container pt-3 mt-5 mb-3 d-flex justify-content-center col-sm-6">
+<div class="container pt-3 mt-5 mb-2 d-flex justify-content-center col-sm-6">
     <div class="card px-1 py-1 shadow-lg">
         <div class="card-body">
 
             <!-- Historico -->
             <h4 class="card-title mb-3 text-dark">Histórico</h4>
+            <p>Página {{numbers.number}}</p>
             <table class="table caption-top table-striped">
               <thead>
                 <tr>
                   <th class="text-dark" scope="col">Número</th>
                   <th class="text-dark" scope="col">Menor Duodigito</th>
-                  <th class="text-dark" scope="col">Data</th>
+                  <th class="text-dark mob-hide" scope="col">Data</th>
+                  <th class="text-dark mob-hide" scope="col">Hora</th>
                 </tr>
               </thead>
               <tbody>
                 {% for number in numbers %}
                     <tr>
-                      <td>{{number.numbers}}</td>
-                      <td>{{number.smallduodigit}}</td>
-                      <td>{{number.date_time|date:'d/m'}}</td>
+                      <td class="">{{number.numbers}}</td>
+                      <td class="">{{number.smallduodigit}}</td>
+                      <td class="mob-hide">{{number.date_time|date:'d/m/Y'}}</td>
+                      <td class="mob-hide">{{number.date_time|date:'H:i'}}</td>
                     </tr>
                 {% endfor %}
               </tbody>
             </table>
-            <div class="d-flex flex-column text-center text-dark"> <small class="agree-text">Desafio Bridge Dev Web Full-Stack</small></div>
-
+            <div class="d-flex flex-column text-center text-dark"> <small class="agree-text">Desafio <a class="text-dark" href="https://bridge.ufsc.br/" target="_blank"><u>Bridge</u></a> Dev Web Full-Stack</small></div>
         </div>
     </div>
 </div>
 
 <!-- Paginacao -->
-<div class="container  d-flex justify-content-center">
+<div class="container d-flex justify-content-center">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
           {% for page in numbers.paginator.page_range %}
-                {% if numbers.numbers == page %}
+                {% if numbers.number == page %}
                     <li class="page-item active shadow-lg"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
                 {% else %}
                     <li class="page-item shadow-lg"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
