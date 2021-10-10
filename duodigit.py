@@ -1,5 +1,12 @@
 
-def Duodigito(number):
+def SmallDuodigit(digit):
+    for num in range(2, 101):
+        multiple = int(digit) * num
+        if Duodigit(multiple):
+            return multiple
+
+
+def Duodigit(number):
     value = str(number)
     repeated = []
     distinct = 0
@@ -10,13 +17,9 @@ def Duodigito(number):
         repeated.append(num)
 
     if 2 >= distinct:
-        return f'{value} é duodigito'
+        return True
     else:
-        return f'{value} não é duodigito'
+        return False
 
 
-print(Duodigito(101))
-print(Duodigito(322))
-print(Duodigito(888))
-print(Duodigito(123))
-print(Duodigito(1102))
+print(SmallDuodigit(999))

@@ -2,17 +2,17 @@
 
 {% block conteudo %}
 
-<div class="container pt-5 mt-5 mb-3 d-flex justify-content-center">
-    <div class="card px-1 py-4">
+<div class="container pt-3 mt-5 mb-3 d-flex justify-content-center col-sm-6">
+    <div class="card px-1 py-1 shadow-lg">
         <div class="card-body">
 
+            <!-- Historico -->
             <h4 class="card-title mb-3 text-dark">Histórico</h4>
-
             <table class="table caption-top table-striped">
               <thead>
                 <tr>
                   <th class="text-dark" scope="col">Número</th>
-                  <th class="text-dark" scope="col">Duodigito</th>
+                  <th class="text-dark" scope="col">Menor Duodigito</th>
                   <th class="text-dark" scope="col">Data</th>
                 </tr>
               </thead>
@@ -20,35 +20,31 @@
                 {% for number in numbers %}
                     <tr>
                       <td>{{number.numbers}}</td>
-                      {% if number.duodigit == True %}
-                      <td class="text-success">Sim</td>
-                      {% else %}
-                      <td class="text-danger">Não</td>
-                      {% endif %}
+                      <td>{{number.smallduodigit}}</td>
                       <td>{{number.date_time|date:'d/m'}}</td>
                     </tr>
                 {% endfor %}
               </tbody>
             </table>
+            <div class="d-flex flex-column text-center text-dark"> <small class="agree-text">Desafio Bridge Dev Web Full-Stack</small></div>
 
         </div>
     </div>
 </div>
 
+<!-- Paginacao -->
 <div class="container  d-flex justify-content-center">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
           {% for page in numbers.paginator.page_range %}
                 {% if numbers.numbers == page %}
-                    <li class="page-item active"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
+                    <li class="page-item active shadow-lg"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
+                    <li class="page-item shadow-lg"><a class="page-link text-dark" href="?p={{page}}">{{page}}</a></li>
                 {% endif %}
           {% endfor %}
       </ul>
     </nav>
 </div>
-
-
 
 {% endblock %}

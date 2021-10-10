@@ -1,41 +1,55 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-<div class="container pt-5 mt-5 mb-3 d-flex justify-content-center">
-    <div class="card px-1 py-4">
+
+<div class="container pt-3 mt-5 mb-3 d-flex justify-content-center col-sm-6">
+    <div class="card px-1 py-1 shadow-lg">
         <div class="card-body">
 
-            <h4 class="card-title mb-3 text-dark">Verifica Duodigitos</h4>
-            <h6 class="information mt-4 text-dark">Digite um número</h6>
+            <!-- Apresentacao -->
+            <div class="container mt-3 mb-5 d-flex justify-content-center">
+                <div class="card px-1 py-1 shadow-lg">
+                    <div class="card-body pt-0 pb-0">
+                        <h4 class="card-title mt-3 text-dark">Menor Duodigito</h4>
+                        <p>Este <a class="text-dark" href="https://rockcontent.com/br/blog/progressive-web-apps/" target="_blank"><u>Progressive Web App (PWA)</u></a> consiste em calcular o <strong>menor número real duodigito múltiplo de X</strong>, onde <strong>X</strong> é um número <strong>real > 100</strong> informado pelo usuário.</p>
+                        <p><i>* Um número duodigito é aquele cujo seus algarismos têm no máximo 2 distintos números. *</i></p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Formulario para insercao de numeros -->
+            <h6 class="information mt-4 text-dark">Digite um número ( X )</h6>
             <form method="POST" action="{% url 'index' %}">
                 {% csrf_token %}
                 <div class="row justify-content-center">
-                    <div class="col-sm-12">
+                    <div class="col-sm-8">
                         <div class="form-group">
-                          <input class="form-control" maxlength="8" type="text" name="numbers" value="{{request.POST.number}}" placeholder="Ex: 1034" required id="id_numbers">
+                          <input class="form-control shadow-lg" maxlength="8" type="text" name="numbers" value="{{request.POST.number}}" placeholder="Ex: 1034" required id="id_numbers">
                         </div>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-sm-8">
-                      <button type="submit" class="btn btn-primary btn-block confirm-button">Verificar</button>
+                    <div class="col-sm-5">
+                      <button type="submit" class="btn btn-primary btn-block confirm-button shadow-lg">Verificar</button>
                     </div>
                 </div>
             </form>
 
+            <!-- Mensagens -->
+            <div class="container pt-3 mb-0 d-flex justify-content-center">
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+            <!-- Rodape -->
+            <div class="d-flex flex-column text-center text-dark"> <small class="agree-text">Desafio <a class="text-dark" href="https://bridge.ufsc.br/" target="_blank"><u>Bridge</u></a> Dev Web Full-Stack</small></div>
+
         </div>
-      <div class="d-flex flex-column text-center px-5 mt-3 mb-3 text-dark"> <small class="agree-text">Desafio Bridge Dev Web Full-Stack</small></div>
     </div>
 </div>
 
-<div class="container d-flex justify-content-center">
-    {% if messages %}
-    {% for message in messages %}
-        <div class="alert {{ message.tags }}" role="alert">{{ message }}</div>
-    {% endfor %}
-    {% endif %}
-</div>
 {% endblock %}
