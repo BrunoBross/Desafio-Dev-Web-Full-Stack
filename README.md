@@ -11,7 +11,7 @@ Este projeto é um desafio da vaga de Desenvolvedor Full-Stack do @laboratório-
 
 O Frontend do projeto foi desenvolvido em HTML+CSS, com a utilização do framework [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/).
 
-Já o Backend foi desenvolvido em Python, com a utilização do framework [Django](https://www.djangoproject.com/start/overview/). Também foi utilizado o [Sqlite3](https://www.sqlite.org/about.html) ( padrão django ) no banco de dados.
+Já o Backend foi desenvolvido em Python, com a utilização do framework [Django](https://www.djangoproject.com/start/overview/). Também foi utilizado o [Sqlite3](https://www.sqlite.org/about.html) (padrão django) no banco de dados.
 
 ### • Execução Local do Projeto
 
@@ -32,6 +32,6 @@ Assim que executado, aparecerá no terminal um link de acesso local do app, mas 
  
 Está disponível uma demonstração online para descartar a necessidade de rodar o projeto em um servidor local.
 
-OBS: como se trata de uma hospedagem grátis ( pouco processamento ), pode haver algum delay no servidor quando feito testes maiores.
+OBS: como se trata de uma hospedagem grátis (pouco processamento), pode haver algum delay no servidor quando feito testes maiores.
 
 [Demo Heroku](https://dev-bridge.herokuapp.com/)
