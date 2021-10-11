@@ -22,6 +22,8 @@ No seu terminal, execute os comandos na seguinte ordem:
 
 > pip install django
 
+Dentro da pasta do projeto execute:
+
 > python manage.py runserver
 
 ### • Demo Online
