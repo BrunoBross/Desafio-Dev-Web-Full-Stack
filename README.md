@@ -5,13 +5,13 @@
 
 ### Olá!
 
-Este projeto é um desafio da vaga de Desenvolvedor Full-Stack do @laboratório-bridge. Sendo um *WebApp* que faz recebe um número do usuário e retorna se o número é um *Duodigito* ou não. O projeto além de verificar, ele também mantém um histórico das consultas realizadas.
+O projeto a ser apresentado a seguir trata-se de um desafio para vaga de Desenvolvedor Full-Stack do @laboratório-bridge. Consiste em um *WebApp* que recebe um número real X > 100 do usuário e retorna o menor *Duodigito* múltiplo de X. O projeto além de verificar, mantém um histórico das verificações realizadas.
 
 ### • Especificações
 
-O Frontend do projeto foi desenvolvido em HTML+CSS, com a utilização do framework [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/).
+O *Frontend* do projeto foi desenvolvido em HTML+CSS, com a utilização do framework [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/).
 
-Já o Backend foi desenvolvido em Python, com a utilização do framework [Django](https://www.djangoproject.com/start/overview/). Também foi utilizado o [Sqlite3](https://www.sqlite.org/about.html) (padrão django) no banco de dados.
+Já o *Backend* foi desenvolvido em Python, com a utilização do framework [Django](https://www.djangoproject.com/start/overview/). Também foi utilizado o [Sqlite3](https://www.sqlite.org/about.html) (padrão django) no banco de dados.
 
 ### • Execução Local do Projeto
 
