@@ -25,5 +25,8 @@ No seu terminal, execute os comandos na seguinte ordem:
 > python manage.py runserver
 
 ### Demo Online
+ 
+Está disponível uma demonstração online para descartar a necessidade de rodar o projeto em um servidor local.
+OBS: como se trata de uma hospedagem grátis ( pouco processamento ), pode haver algum delay no servidor quando feito testes maiores.
 
-[Link](...)
+[Demo Heroku](https://dev-bridge.herokuapp.com/)
