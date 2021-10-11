@@ -11,7 +11,7 @@ Este projeto é um desafio da vaga de Desenvolvedor Full-Stack do @laboratório-
 
 O Frontend do projeto foi desenvolvido em HTML+CSS, com a utilização do framework [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/).
 
-Já o Backend foi desenvolvido em Python, com a utilização do framework [Django](https://www.djangoproject.com/start/overview/). Também foi utilizado o [Sqlite3](https://www.sqlite.org/about.html) no banco de dados.
+Já o Backend foi desenvolvido em Python, com a utilização do framework [Django](https://www.djangoproject.com/start/overview/). Também foi utilizado o [Sqlite3](https://www.sqlite.org/about.html) ( padrão django ) no banco de dados.
 
 ### • Execução Local do Projeto
 
@@ -25,6 +25,8 @@ No seu terminal, execute os comandos na seguinte ordem:
 Dentro da pasta do projeto execute:
 
 > python manage.py runserver
+
+Assim que executado, aparecerá no terminal um link de acesso local do app, mas você pode também acessar diretamente no seu navegador com [https://localhost:8000](https://localhost:8000)
 
 ### • Demo Online
  
